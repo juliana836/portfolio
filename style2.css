@@ -12,7 +12,7 @@ body {
     background-color: #4e0013;
 }
 h1{
-    font-family: "Pinyon Script", cursive;
+    font-family: cursive;
     font-weight: 400;
     ;
 }
@@ -20,6 +20,7 @@ p{
     font-size: large;
     
 }
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -57,7 +58,71 @@ p{
     animation: animate 25s linear infinite;
     bottom: -150px;
 }
+/* survolement lien */
+a {
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
 
+a:hover {
+  background-color: #FFB6C1;
+}
+/* hover effect */
+.holographic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background: transparent;
+}
+
+.holographic-card {
+  width: 300px;
+  height: 200px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+.holographic-card h2 {
+  color: rgba(78, 0, 19, 0.5);
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.holographic-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    0deg, 
+    transparent, 
+    transparent 30%, 
+    rgba(78, 0, 19, 0.5)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.holographic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(78, 0, 19, 0.5);
+}
+
+.holographic-card:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
 /* Animation des carrés */
 .circles li:nth-child(1){ left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
 .circles li:nth-child(2){ left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
@@ -77,9 +142,7 @@ p{
     font-style: normal;
 }
 
-}
 
-}
 header {
     padding: 20px 0;
     position: sticky;
