@@ -11,7 +11,15 @@ body {
     line-height: 1.6;
     background-color: #4e0013;
 }
-
+h1{
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    ;
+}
+p{
+    font-size: large;
+    
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
